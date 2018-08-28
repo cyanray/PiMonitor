@@ -9,8 +9,8 @@ $conn = new mysqli($servername, $username, $password,"piMonitor");
 if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
 }
-$s = 'insert into RoomState (Temp,Hum,time) VALUES ("'.$_POST["Temp"].'","'.$_POST["Hum"].'","'.date("Y-m-d h:m:s",time()).'");';
-echo $s;
+$s = 'insert into RoomState (Temp,Hum,time) VALUES ("'.$_POST["Temp"].'","'.$_POST["Hum"].'","'.date("Y-m-d h:i:s").'");';
+//echo $s;
 $result = $conn->query($s);
 
 if($result===TRUE)
